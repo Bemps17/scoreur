@@ -9,6 +9,10 @@
 }
 
 body {
+   max-width: 100vw;
+   
+}
+#globalContainer{
     position: relative;
     top: 0vh;
     font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -23,7 +27,6 @@ body {
     align-items: center;
    
 }
-
 .tab-navigation {
     display: flex;
     justify-content: space-around;
@@ -202,10 +205,12 @@ body {
 
     .player {
         max-width: 100%; /* S'assure que les cartes occupent la place disponible */
-        margin: auto;
+       
     }
     /* Contenu des onglets */
 .tab-content {
+    display: flex;
+    justify-content: center;
     width: 100vw;
     
 }
@@ -218,10 +223,11 @@ body {
 
 .tab-pane.active {
     position: absolute;
-    left: 0px;
+    
     display: block;
     opacity: 1;
-    width: 100vw;
+    width: 98vw;
+    
     
 }
 }

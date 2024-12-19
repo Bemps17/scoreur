@@ -319,11 +319,11 @@ button.score-button {
 
 #addPlayerBtn {
     display: block;
-    margin: 60px auto;
-    padding: 20px 40px;
-    font-size: 1.3rem;
+    margin: 10px auto;
+    padding: 2px 4px;
+    
     background: var(--gradient);
-    border-radius: 15px;
+    border-radius: 3px;
 }
 
 @media (orientation: landscape) {
@@ -338,9 +338,9 @@ button.score-button {
     }
     #addPlayerBtn {
         display: block;
-        margin: 6px auto;
-        padding: 20px 40px;
-        font-size: 1.3rem;
+        margin: 8px auto;
+        
+       
         background: var(--gradient);
         border-radius: 15px;
     }
@@ -667,12 +667,7 @@ input:checked + .slider::before {
         margin-top: 5px;
         margin-bottom: 5px;
     }
-    .player {
-       
-        max-width: 90%;
-        margin: 0 auto;
-        padding: 40px 20px;
-    }
+   
     .score-label {
         grid-area: name;
         margin-top: 2vh;
