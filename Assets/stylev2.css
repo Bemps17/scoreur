@@ -1,0 +1,227 @@
+:root {
+    --primary-color: #ff7700;
+    --secondary-color: #ff9944;
+    --background-color: #1c1c1c;
+    --text-color: #f0f0f0;
+    --card-bg: #2c2c2c;
+    --neon-shadow: 0 0 10px var(--primary-color);
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+body {
+    position: relative;
+    top: 0vh;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background: linear-gradient(45deg, #1A1A1A, #2A2A2A);
+    color: var(--text-color);
+    min-height: 100vh;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.tab-navigation {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 480px;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    flex: 1;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: none;
+    padding: 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tab-button.active {
+    background: var(--gradient);
+    box-shadow: var(--neon-shadow);
+}
+
+.tab-content {
+    width: 100%;
+    max-width: 480px;
+    margin:2px 2px;
+}
+
+.container {
+    padding: 10px;
+    background: var(--background-color);
+    border-radius: 12px;
+    box-shadow: var(--neon-shadow);
+}
+
+#players {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.player {
+    background: var(--card-bg);
+    padding: 10px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-areas:
+        "name name"
+        "minus score plus"
+        "farm farm farm";
+    gap: 5px;
+    text-align: center;
+    align-items: center;
+}
+
+.player .player-name {
+    grid-area: name;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.player .score-display {
+    grid-area: score;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.player button {
+    background: var(--gradient);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.player button:hover {
+    transform: scale(1.1);
+}
+
+.timer-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border-radius: 12px;
+    background: var(--card-bg);
+    box-shadow: var(--neon-shadow);
+}
+
+.timer-controls {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.timer-controls button {
+  
+  
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient);
+    color: var(--text-color);
+}
+
+.settings-button {
+    position: absolute;
+    top: 1vh;
+    right: 10px;
+    background: var(--gradient);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: var(--neon-shadow);
+    color: var(--text-color);
+}
+
+@media (max-width: 600px) {
+    .tab-navigation {
+        flex-direction: column;
+        
+        width: fit-content;
+        padding: 2vw 6vw;
+    }
+
+    .tab-button {
+        font-size: 12px;
+        padding: 2vw 6vw;
+    }
+
+    .player {
+        grid-template-areas:
+            "name"
+            "minus score plus"
+            "farm farm farm";
+    }
+
+    .timer-controls {
+        flex-wrap: wrap;
+    }
+}
+@media (orientation: landscape) {
+    .tab-navigation {
+        flex-direction: row;
+        
+        width: fit-content;
+        padding: 0vw 0vw;
+        margin-bottom: 10px;
+    }
+ 
+    #players {
+       
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Deux colonnes max */
+        gap: 10px; /* Espacement entre les cartes */
+        justify-content: center;
+    }
+
+    .player {
+        max-width: 100%; /* S'assure que les cartes occupent la place disponible */
+        margin: auto;
+    }
+    /* Contenu des onglets */
+.tab-content {
+    width: 100vw;
+    
+}
+
+.tab-pane {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tab-pane.active {
+    position: absolute;
+    left: 0px;
+    display: block;
+    opacity: 1;
+    width: 100vw;
+    
+}
+}
