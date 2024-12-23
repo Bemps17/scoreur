@@ -1,6 +1,6 @@
 /* Nouveau CSS combiné avec les styles existants et les nouvelles exigences */
 
-:root {
+/* :root {
     --primary-color: #ff7700;
     --secondary-color: #ff9944;
     --background-color: #1c1c1c;
@@ -8,13 +8,23 @@
     --card-bg: #2c2c2c;
     --neon-shadow: 0 0 10px var(--primary-color);
     --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+} */
+:root {
+    --primary-color: #08196f;
+    --secondary-color: #007bff;
+    --background-color: #0f172a;
+    --text-color: #e0f7fa;
+    --card-bg: #1e293b;
+    --neon-shadow: 0 0 10px var(--primary-color);
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
+
 
 body {
     font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
    
-    background: linear-gradient(45deg, #1A1A1A, #2A2A2A);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--text-color);
    
    
@@ -34,7 +44,7 @@ footer{
     width: 100%;
     display: flex;
     justify-content: space-around;
-    padding: 10px;
+    padding: 5px;
     background: var(--card-bg);
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;

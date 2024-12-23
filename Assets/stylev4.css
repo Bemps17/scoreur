@@ -1,6 +1,6 @@
 /* Feuille de style fusionnée des trois CSS */
 
-:root {
+/* :root {
     --primary-color: #ff7700;
     --secondary-color: #ff9944;
     --background-color: #1c1c1c;
@@ -8,12 +8,20 @@
     --card-bg: #2c2c2c;
     --neon-shadow: 0 0 10px var(--primary-color);
     --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+} */
+:root {
+    --primary-color: #08196f;
+    --secondary-color: #007bff;
+    --background-color: #0f172a;
+    --text-color: #e0f7fa;
+    --card-bg: #1e293b;
+    --neon-shadow: 0 0 10px var(--primary-color);
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
 
-
 /* Boutons généraux */
-button {
+/* button {
     background: var(--gradient);
     color: var(--text-color);
     border: none;
@@ -21,7 +29,7 @@ button {
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
-}
+} */
 
 button:hover {
     transform: scale(1.05);
@@ -57,7 +65,7 @@ button:hover {
     padding: 20px;
     font-size: 1.3rem;
     border-radius: 12px;
-    background: var(--gradient);
+    background: var(--primary-color);
     box-shadow: var(--neon-shadow);
     color: var(--text-color);
 }

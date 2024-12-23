@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --primary-color: #ff7700;
     --secondary-color: #ff9944;
     --background-color: #1c1c1c;
@@ -6,8 +6,16 @@
     --card-bg: #2c2c2c;
     --neon-shadow: 0 0 10px var(--primary-color);
     --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+} */
+:root {
+    --primary-color: #08196f;
+    --secondary-color: #007bff;
+    --background-color: #0f172a;
+    --text-color: #e0f7fa;
+    --card-bg: #1e293b;
+    --neon-shadow: 0 0 10px var(--primary-color);
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
-
 
 /* Overlay plein écran */
 .overlay {
@@ -45,10 +53,10 @@
     pointer-events: none;
 }
 #winnerOverlay::after{
-    margin-top: 50%
-;
+height: 100%;
     content: 'Bravo';
-    
+    background: url(/icons/CanardEnPlastique-ezgif.com-effects.gif) no-repeat center content-box;
+    background-size: 120%;
     color:var(--primary-color);
     display: flex;
     justify-content: center;
@@ -89,7 +97,7 @@
 
 
 button {
-    background: var(--gradient);
+    background: var(--primary-color);
     box-shadow: var(--neon-shadow);
     border: none;
     color: var(--text-color);
@@ -153,11 +161,11 @@ h1 {
     flex: 1 1 calc(-80% - 16px);
 }
 
-.player:hover {
+/* .player:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 247, 255, 0.1);
-}
-.player .delete-player {
+} */
+/* .player .delete-player {
     position: absolute;
     z-index: 4;
     top: 5%;
@@ -170,7 +178,7 @@ h1 {
     background: var(--secondary-color);
     color: var(--background-color);
     font-size: 1.9rem;
-}
+} */
 
 
 .player input[type="text"] {
@@ -216,7 +224,7 @@ h1 {
     color: var(--primary-color);
     text-shadow: var(--neon-shadow);
     font-family: 'Digital-7', monospace;
-    min-width: 12px;
+   width: fit-content;
     animation: glow 2s infinite;
 }
 
@@ -305,8 +313,8 @@ button.score-button {
 
 .delete-player:hover {
     color: #ff0000;
-    transform: scale(1.1);
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    
+   
 }
 
 #addPlayerBtn {
@@ -593,8 +601,8 @@ input:checked + .slider::before {
 /* Media queries */
 @media (max-width: 600px) {
     .settings-panel {
-        width: 90%;
-        padding: 20px;
+        width: 95%;
+        padding: 2px;
     }
 }
 
@@ -607,8 +615,8 @@ input:checked + .slider::before {
     z-index: 1000;
     background: var(--gradient);
     padding: 0px;
-    width: min(20px, 5vw);
-    height: min(20px, 5vw);
+    width: min(15px, 2vw);
+    height: min(15px, 2vw);
     min-width: 20px;
     min-height: 20px;
     display: flex;
@@ -627,30 +635,13 @@ input:checked + .slider::before {
 }
 
 /* Ajustement pour les petits écrans */
-@media (max-width: 600px) {
-    .settings-button {
-        font-size: 2rem;
-        padding: 15px;
-    }
-    .topPlayers{
-        display: flex;
-        justify-content: space-between;
-    }
-    #addPlayerBtn{
-        font-size: 2rem;
-    }
-    
-}
+
 @media (max-width: 768px) {
     .settings-button {
         font-size: 2rem;
-        padding: 15px;
+        padding: 1px;
     }
-    .topPlayers{
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 0;
-    }
+    
     .player input[type="text"] {
         grid-area: name;
         background: transparent;

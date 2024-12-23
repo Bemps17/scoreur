@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Configuration par défaut
     let settings = {
         winPoints: 7,
-        primaryColor: '#ff7700',
-        secondaryColor: '#ff9944',
+        primaryColor: 'var(--primary-color)',
+        secondaryColor: 'var(--primary-color)',
         soundEnabled: true,
         timerAlertEnabled: true,
         timerDuration: 45,
@@ -149,8 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const playerDiv = document.createElement('div');
         playerDiv.className = 'player';
         playerDiv.innerHTML = `
-            <button class="delete-player">×</button>
+              <button class="delete-player">×</button>
             <input type="text" class="player-name" placeholder="Nom">
+            <button class="break">!</button>
+          
             <button class="score-button minus-score">-</button>
             <div class="score-display">0</div>
             <button class="score-button plus-score">+</button>
