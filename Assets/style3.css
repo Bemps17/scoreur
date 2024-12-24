@@ -9,6 +9,7 @@
     --neon-shadow: 0 0 10px var(--primary-color);
     --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 } */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 :root {
     --primary-color: #08196f;
     --secondary-color: #007bff;
@@ -21,10 +22,10 @@
 
 
 body {
-    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
    
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--background-color);
     color: var(--text-color);
    
    
@@ -193,7 +194,7 @@ footer{
 .modal {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 33%;
     width: 100vw;
     height: 100vh;
     background: rgba(0, 0, 0, 0.8);
@@ -234,4 +235,12 @@ footer{
 .hidden {
     display: none;
 }
+}
+.top-scorer-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    width: 80vw;
+
 }

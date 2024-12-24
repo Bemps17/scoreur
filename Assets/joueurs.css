@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+
 /* Style de base pour les joueurs */
 .player {
+    
     position: relative;
     background: var(--card-bg);
     border-radius: 20px;
@@ -33,6 +37,7 @@ button {
     justify-content: center;
     align-items: center;
     width: 100%;
+    font-family: 'Nunito', sans-serif;
 }
 
 /* Bouton de suppression à gauche */
@@ -65,6 +70,7 @@ button {
 
 .farm-count input {
     font-size: 2rem;
+    font-family: 'Nunito', sans-serif;
 }
 
 

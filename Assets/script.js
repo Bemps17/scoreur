@@ -143,29 +143,30 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
 
-    // Création des joueurs
-    function createPlayer() {
-        playerCount++;
-        const playerDiv = document.createElement('div');
-        playerDiv.className = 'player';
-        playerDiv.innerHTML = `
-              <button class="delete-player">×</button>
-            <input type="text" class="player-name" placeholder="Nom">
-            <button class="break">!</button>
-          
-            <button class="score-button minus-score">-</button>
-            <div class="score-display">0</div>
-            <button class="score-button plus-score">+</button>
-            <div class="farm-label">Fermes</div>
-            <button class="farm-button minus">-</button>
-            <div class="farm-count">
-                <input type="number" value="0" readonly>
-            </div>
-            <button class="farm-button plus">+</button>
-        `;
-        playersContainer.appendChild(playerDiv);
-        setupPlayerControls(playerDiv);
-    }
+// Fonction createPlayer mise à jour
+function createPlayer() {
+    playerCount++;
+    const playerDiv = document.createElement('div');
+    playerDiv.className = 'player';
+    playerDiv.innerHTML = `
+            <div class="BreakWin"></div> 
+            <button class="delete-player">×</button>
+        <input type="text" class="player-name" placeholder="Nom">
+        <button class="break">!</button>
+      
+        <button class="score-button minus-score">-</button>
+        <div class="score-display">0</div>
+        <button class="score-button plus-score">+</button>
+        <div class="farm-label">Fermes/Reprises</div>
+        <button class="farm-button minus">-</button>
+        <div class="farm-count">
+            <input type="number" value="0" readonly>
+        </div>
+        <button class="farm-button plus">+</button>
+    `;
+    playersContainer.appendChild(playerDiv);
+    setupPlayerControls(playerDiv);
+}
 
     // Gestion des contrôles des joueurs
     function setupPlayerControls(playerDiv) {

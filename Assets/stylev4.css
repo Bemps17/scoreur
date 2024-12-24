@@ -31,10 +31,7 @@
     transition: all 0.3s ease;
 } */
 
-button:hover {
-    transform: scale(1.05);
-    box-shadow: var(--neon-shadow);
-}
+
 
 /* Conteneur global */
 #globalContainer {
@@ -244,7 +241,7 @@ button:hover {
     margin: 5px;
     border: none;
     border-radius: 12px;
-    background: var(--gradient);
+    background: var(--primary-color);
     color: var(--text-color);
     cursor: pointer;
 }
