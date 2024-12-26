@@ -4,8 +4,7 @@
        breakModal.innerHTML = `
            <div class="modal-content">
                <span class="close">&times;</span>
-               <h2>Confirmation de casse gagnée</h2>
-               <p>Ce joueur a remporté la casse.</p>
+               <h2>Ce joueur a la casse.</h2>
                <button id="confirmBreakModal">Confirmer</button>
                <button id="cancelBreakModal">Annuler</button>
                <button id="removeWhiteBall">Supprimer la bille blanche</button>

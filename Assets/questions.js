@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.createElement('div');
     modal.classList.add('modal');
     modal.innerHTML = `
-        <div class="modal-content">
+          <div class="modal-content">
             <span class="close">&times;</span>
-            <h2> <div class="setting-group logoContainer"><a href="contact.html" target="_blank"
-                        rel="noopener noreferrer">Me contacter</a></div></h2>
+          <div class="cta-button"><a href="contact.html" target="_blank"
+                        rel="noopener noreferrer">Me contacter</a></div>
            
-            <button id="confirmModal">Fermer</button>
+           
         </div>
     `;
     document.body.appendChild(modal);
@@ -34,9 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    confirmModal.addEventListener('click', () => {
-        alert('Bonne journée');
-        modal.style.display = 'none';
-    });
+    // html: <button id="confirmModal">Fermer</button>
+    // 
+    // 
+    //  script: confirmModal.addEventListener('click', () => {
+    //     alert('Bonne journée');
+    //     modal.style.display = 'none';
+    // });
 
 });

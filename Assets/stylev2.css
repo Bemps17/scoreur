@@ -127,34 +127,7 @@
     transform: scale(1.1);
 }
 
-.timer-display {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2px;
-    border-radius: 12px;
-    background: var(--card-bg);
-    box-shadow: var(--neon-shadow);
-}
 
-.timer-controls {
-    display: flex;
-    gap: 6px;
-    justify-content: center;
-    margin-top: 0px;
-}
-
-.timer-controls button {
-  
-  
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--gradient);
-    color: var(--text-color);
-}
 
 .settings-button {
     position: absolute;
@@ -187,9 +160,7 @@
             "farm farm farm";
     }
 
-    .timer-controls {
-        flex-wrap: wrap;
-    }
+ 
 }
 @media (orientation: landscape) {
     .tab-navigation {

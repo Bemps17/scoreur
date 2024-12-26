@@ -7,8 +7,8 @@
     position: relative;
     background: var(--card-bg);
     border-radius: 20px;
-    padding: 2px;
-    margin: 2px 0;
+    padding: 4px 10px;
+    margin: 2px 2px;
     gap: 2px;
     display: grid;
     grid-template-columns: auto auto auto;
@@ -22,6 +22,8 @@
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
 }
 
 button {
@@ -56,6 +58,8 @@ button {
     justify-content: center;
     grid-area: break;
     width: fit-content;
+    font-weight: 200;
+    font-size: 1rem;
 }
 
 /* Contrôle du score */
@@ -77,6 +81,8 @@ button {
 
 @media (max-width: 768px) {
     .player input[type="text"] {
+        align-self: center;
+        justify-self: center;
         grid-area: name;
         background: transparent;
         border: none;
@@ -84,7 +90,7 @@ button {
         font-size: 1.5rem;
         padding: 6px;
         height: 50%;
-        width: 100%;
+        width: 80%;
         margin-top: 5px;
         margin-bottom: 5px;
     }

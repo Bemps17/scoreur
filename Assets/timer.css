@@ -1,0 +1,101 @@
+/* Timer */
+#timer{
+ top: 0;
+ position: absolute;
+ height: 100vh;
+ width: 100vw;
+ overflow: hidden;
+ 
+}
+
+
+/* Timer repositionné */
+.timer-display {
+    position: relative;
+    background: var(--card-bg);
+ overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+height: 100%;
+    text-align: center;
+}
+.timer-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border-radius: 12px;
+    background: var(--card-bg);
+    box-shadow: var(--neon-shadow);
+}
+.playPause{
+    display: flex;
+
+}
+
+#timeLeft {
+    font-size: 10rem;
+    font-family: 'Digital-7', monospace;
+    color: white;
+    text-shadow: var(--neon-shadow);
+ 
+}
+
+.timer-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3px;
+    padding: 3rem;
+}
+
+
+.timer-controls button {
+    font-size: 6rem;
+    padding: 4px;
+    
+}
+
+.time-alert {
+    animation: alert-blink 1s infinite;
+}
+
+@keyframes alert-blink {
+    0%, 100% {
+        color: var(--primary-color);
+    }
+    50% {
+        color: red;
+    }
+}
+@media (max-width: 768px) {
+    /* Timer repositionné */
+
+
+#timeLeft {
+    font-size: 12rem;
+    font-family: 'Digital-7', monospace;
+    color: white;
+    text-shadow: var(--neon-shadow);
+ 
+}
+
+
+
+.timer-controls button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    padding: 12px 12px;
+    height: fit-content;
+}
+.playPause{
+    display: flex;
+    flex-direction: column;
+
+}
+}

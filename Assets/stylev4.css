@@ -1,14 +1,6 @@
 /* Feuille de style fusionnée des trois CSS */
 
-/* :root {
-    --primary-color: #ff7700;
-    --secondary-color: #ff9944;
-    --background-color: #1c1c1c;
-    --text-color: #000000;
-    --card-bg: #2c2c2c;
-    --neon-shadow: 0 0 10px var(--primary-color);
-    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-} */
+
 :root {
     --primary-color: #08196f;
     --secondary-color: #007bff;
@@ -36,56 +28,23 @@
 /* Conteneur global */
 #globalContainer {
     position: relative;
-    padding: 10px;
-    background: linear-gradient(45deg, #1A1A1A, #2A2A2A);
+   
+    padding-bottom: 5vh;
+    padding-top: 1vh;
+ 
+   
+    background: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
+  
 }
 
-/* Onglets fixes */
-.tab-navigation.fixed-bottom {
-    position: fixed;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    background: var(--card-bg);
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-}
 
-.tab-button {
-    flex: 1;
-    padding: 20px;
-    font-size: 1.3rem;
-    border-radius: 12px;
-    background: var(--primary-color);
-    box-shadow: var(--neon-shadow);
-    color: var(--text-color);
-}
 
-.tab-button.active {
-    background: var(--primary-color);
-    color: var(--background-color);
-}
 
-/* Timer */
 
-#timer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-}
-.timer-display {
-    padding: 2px;
-    background: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: var(--neon-shadow);
-}
 
 
 
@@ -204,47 +163,7 @@
     
     width: 10%;
 }
-/* Fenêtre contextuelle pour la saisie des noms */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-}
 
-.modal-content {
-    position: fixed;
-    top: 10%;
-    width: 90%;
-    background: var(--card-bg);
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: var(--neon-shadow);
-    text-align: center;
-}
-
-.modal-content input {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 16px;
-}
-
-.modal-content button {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    border-radius: 12px;
-    background: var(--primary-color);
-    color: var(--text-color);
-    cursor: pointer;
-}
 
 .hidden {
     display: none;

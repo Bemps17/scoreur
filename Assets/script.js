@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const addPlayerBtn = document.getElementById('addPlayerBtn');
     const settingsBtn = document.querySelector('.settings-button');
     const settingsPanel = document.querySelector('.settings-panel');
-    const timerDisplay = document.getElementById('timerDisplay');
-    const timeLeftDisplay = document.getElementById('timeLeft');
+ 
     const winnerOverlay = document.getElementById('winnerOverlay');
 
     // Gestion des onglets
@@ -60,50 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Timer
-    function startTimer() {
-        if (isPaused) {
-            isPaused = false;
-            timer = setInterval(updateTimer, 1000);
-        }
-    }
-
-    function pauseTimer() {
-        isPaused = true;
-        clearInterval(timer);
-    }
-
-    function resetTimer() {
-        timeLeft = settings.timerDuration;
-        updateTimerDisplay();
-        pauseTimer();
-    }
-
-    function updateTimer() {
-        if (timeLeft > 0) {
-            timeLeft--;
-            updateTimerDisplay();
-
-            if (timeLeft <= 5 && timeLeft > 0) {
-                playSound('timerAlertSound');
-                timeLeftDisplay.classList.add('time-alert');
-            }
-        } else {
-            pauseTimer();
-            timeLeftDisplay.classList.remove('time-alert');
-            alert('Temps écoulé !');
-        }
-    }
-
-    function updateTimerDisplay() {
-        timeLeftDisplay.textContent = String(timeLeft).padStart(2, '0');
-    }
-
-    function addTimeExtension() {
-        timeLeft += settings.timeExtension;
-        updateTimerDisplay();
-        playSound('pointSound');
-    }
+   
 
     // Sons
     function playSound(soundId) {
@@ -152,7 +108,7 @@ function createPlayer() {
             <div class="BreakWin"></div> 
             <button class="delete-player">×</button>
         <input type="text" class="player-name" placeholder="Nom">
-        <button class="break">!</button>
+        <button class="break">C</button>
       
         <button class="score-button minus-score">-</button>
         <div class="score-display">0</div>
@@ -167,6 +123,13 @@ function createPlayer() {
     playersContainer.appendChild(playerDiv);
     setupPlayerControls(playerDiv);
 }
+playersContainer.addEventListener('keydown', function (event) {
+    if (event.target.classList.contains('player-name') && event.key === 'Enter') {
+        event.preventDefault(); // Empêche la soumission par défaut
+        event.target.blur(); // Ferme le clavier virtuel
+        
+    }
+});
 
     // Gestion des contrôles des joueurs
     function setupPlayerControls(playerDiv) {
@@ -218,9 +181,9 @@ function createPlayer() {
     // Sauvegarde et chargement des paramètres
     function saveSettings() {
         settings = {
-            winPoints: parseInt(document.getElementById('winPoints').value) || 100,
-            primaryColor: document.getElementById('primaryColor').value || '#ff7700',
-            secondaryColor: document.getElementById('secondaryColor').value || '#ff9944',
+            winPoints: parseInt(document.getElementById('winPoints').value) || 7,
+            primaryColor: document.getElementById('primaryColor').value || '#08196f',
+            secondaryColor: document.getElementById('secondaryColor').value || '#007bff',
             soundEnabled: document.getElementById('soundEnabled').checked,
             timerAlertEnabled: document.getElementById('timerAlertEnabled').checked,
             timerDuration: parseInt(document.getElementById('timerDuration').value) || 45,
@@ -252,14 +215,16 @@ function createPlayer() {
 
     // Initialisation
     addPlayerBtn.addEventListener('click', createPlayer);
-    document.getElementById('startTimer').addEventListener('click', startTimer);
-    document.getElementById('pauseTimer').addEventListener('click', pauseTimer);
-    document.getElementById('resetTimer').addEventListener('click', resetTimer);
-    document.getElementById('addTime').addEventListener('click', addTimeExtension);
+   
+   
+   
+   
     document.getElementById('saveSettings').addEventListener('click', saveSettings);
 
     loadSettings();
-    resetTimer();
+   
+
+    
 });
 
 

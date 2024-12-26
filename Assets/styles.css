@@ -1,21 +1,77 @@
-/* :root {
-    --primary-color: #ff7700;
-    --secondary-color: #ff9944;
-    --background-color: #1c1c1c;
-    --text-color: #f0f0f0;
-    --card-bg: #2c2c2c;
-    --neon-shadow: 0 0 10px var(--primary-color);
-    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-} */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+
 :root {
     --primary-color: #08196f;
     --secondary-color: #007bff;
     --background-color: #0f172a;
     --text-color: #e0f7fa;
+    --text-color-2: #0f172a;
     --card-bg: #1e293b;
     --neon-shadow: 0 0 10px var(--primary-color);
     --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+element.style{
+    display: initial;
+}
+body {
+    font-family: 'prompt', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+   
+    background: url('/icons/cover1Vertical.png') no-repeat, 
+    linear-gradient(45deg, #1A1A1A, #2A2A2A); 
+
+background-size: cover, cover; /* Taille des arrière-plans */
+background-position: center, center; /* Position des arrière-plans */
+background-repeat: no-repeat, repeat; /* Empêche la répétition */
+
+
+    color: var(--text-color);
+   
+   max-width: 1920px;
+ margin: auto;
+ height: 100vh;
+ width: 100vw;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+}
+
+p {
+    color: var(--text-color);
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--neon-shadow);
+}
+
+body, html{
+ 
+    scroll-behavior: smooth; 
+}
+
+@media (prefers-reduced-motion: reduce){
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        transition: none;
+    }
 }
 
 /* Overlay plein écran */
@@ -139,28 +195,7 @@ h1 {
    
 }
 
-.player {
-    
-    position: relative;
-    background: var(--card-bg);
-    border-radius: 20px;
-    padding: 3px 5px;
-    margin: 5px 0;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-areas: 
-      
-        "name name name"
-        "minus score plus"
-        "farmLabel farmLabel farmLabel"
-        "farmMinus farms farmPlus";
-    gap: 3px;
-    text-align: center;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    flex: 1 1 calc(-80% - 16px);
-}
+
 
 /* .player:hover {
     transform: translateY(-5px);
@@ -267,7 +302,7 @@ button {
 }
 
 button:hover {
-    transform: scale(1.05);
+    
     box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
 }
 
@@ -366,17 +401,63 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /* Style des onglets */
+footer{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    bottom: 0vh;
+    z-index: 1000;
+}
 .tab-navigation {
-    background: var(--background-color);
-   width: 100%;
+    
+   
     
     
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     gap: 8px;
     
     padding: 8px;
 }
+/* Onglets fixes au bas de l'écran */
+.tab-navigation.fixed-bottom {
+    position: fixed;
+   
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    background: var(--card-bg);
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 12px;
+    background: var(--gradient);
+    box-shadow: var(--neon-shadow);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+    transform: scale(1.1);
+}
+
+.tab-button.active {
+    background: var(--gradient);
+    box-shadow: var(--neon-shadow);
+}
+
 
 .tab-button {
     background: var(--card-bg);
@@ -416,52 +497,6 @@ input[type="number"]::-webkit-outer-spin-button {
     opacity: 1;
 }
 
-/* Timer repositionné */
-.timer-display {
-    position: relative;
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    margin: 40px auto;
-    max-width: 600px;
-    text-align: center;
-}
-
-#timeLeft {
-    font-size: 6rem;
-    font-family: 'Digital-7', monospace;
-    color: var(--primary-color);
-    text-shadow: var(--neon-shadow);
-    margin: 20px 0;
-}
-
-.timer-controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    margin-top: 3px;
-    padding: 3rem;
-}
-
-.timer-controls button {
-    font-size: 6vw;
-    padding: 4px;
-    
-}
-.time-alert {
-    animation: alert-blink 1s infinite;
-}
-
-@keyframes alert-blink {
-    0%, 100% {
-        color: var(--primary-color);
-    }
-    50% {
-        color: red;
-    }
-}
 .winner {
     color: gold;
     font-size: 1.5rem;
@@ -559,7 +594,7 @@ input[type="number"]::-webkit-outer-spin-button {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+   
     transition: 0.3s;
     border-radius: 25px; /* Arrondi complet */
     box-shadow: var(--neon-shadow);
@@ -573,7 +608,7 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 21px;
     left: 2px; /* Position initiale */
     bottom: 2px;
-    background: var(--gradient);
+    background: var(--background-color);
     transition: 0.3s;
     border-radius: 50%;
     box-shadow: var(--neon-shadow);
@@ -758,39 +793,78 @@ input:checked + .slider::before {
     }
 }
 
+
+
 @media (max-width: 768px) {
-    /* Timer repositionné */
-.timer-display {
-    position: relative;
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    margin: 40px auto;
-    max-width: 600px;
-    text-align: center;
+    #accueilContainer {
+       
+        display: block; /* Visible seulement sur mobile */
+    }
 }
 
-#timeLeft {
-    font-size: 8rem;
-    font-family: 'Digital-7', monospace;
-    color: var(--primary-color);
-    text-shadow: var(--neon-shadow);
-    margin: 2px 0;
-}
+#accueilContainer {
+    visibility: hidden;
+opacity: 0;
+    position: fixed; /* Couvre tout l'écran */
+    top: 0;
+    left: 0;
 
-.timer-controls {
-    display: grid;
-   grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    height: 100vh;
+    background: linear-gradient(45deg, #1A1A1A, #2A2A2A); /* Dégradé */
+    display: flex;
     justify-content: center;
-    margin-top: 1px;
-    padding: 3rem;
+    align-items: center;
+    z-index: 9999; /* Toujours au-dessus */
 }
 
-.timer-controls button {
-    font-size: 4rem;
-    padding: 2px;
+/* Container pour gérer l'image et le bouton */
+.image-container {
+    position: relative;
+   
+}
+
+/* Style de l'image */
+.accueil {
+    width: 100%; /* Remplit le container */
+    
+    height: 100vh;
+    display: block;
+}
+
+/* Style du bouton */
+.accueil-button {
+    position: absolute;
+    bottom: 40vh; /* Place le bouton vers le bas */
+    left: 50%; /* Centre horizontalement */
+    transform: translateX(-50%); /* Ajuste pour centrer précisément */
+    padding: 10px 20px;
+    font-size: 18px;
+background: black !important;
+    color: white !important;
+    border: none;
+    border-radius: 10px !important;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    box-shadow: 2px 2px 10px #ff7400 !important;
+
+}
+
+.accueil-button:hover {
+    background-color: var(--background-color);
     
 }
+.fade-out {
+    animation: fadeOut 0.5s forwards;
 }
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+

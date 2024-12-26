@@ -2,13 +2,21 @@ body {
     font-family: 'prompt', -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
    
-    background: linear-gradient(45deg, #1A1A1A, #2A2A2A);
-    color: var(--text-color);
+    background:
+    linear-gradient(45deg, #1A1A1A, #2A2A2A), /* Première couche : dégradé */
+    url('/icons/cover1Vertical.png') no-repeat; /* Deuxième couche : image */
+
+background-size: cover, contain; /* Taille des arrière-plans */
+background-position: center, center; /* Position des arrière-plans */
+background-repeat: no-repeat, no-repeat; /* Empêche la répétition */
+
    
    max-width: 1920px;
  margin: auto;
 }
-
+input, button, textarea, select{
+  font: inherit; 
+}
 main{
     margin: auto;
 }
