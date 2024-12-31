@@ -17,7 +17,7 @@ body {
     font-family: 'prompt', -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
    
-    background: url('/icons/cover1Vertical.png') no-repeat, 
+    background: 
     linear-gradient(45deg, #1A1A1A, #2A2A2A); 
 
 background-size: cover, cover; /* Taille des arrière-plans */

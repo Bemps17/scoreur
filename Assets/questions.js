@@ -5,9 +5,34 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.innerHTML = `
           <div class="modal-content">
             <span class="close">&times;</span>
-          <div class="cta-button"><a href="contact.html" target="_blank"
+         
+        
+            
+            <h2>Aide</h2>
+            <div class="help-content">
+                <h3>Comment utiliser l'application</h3>
+                <ul>
+                    <li>Ajoutez des joueurs avec le bouton "+"</li>
+                    <li>Cliquez sur le nom d'un joueur pour le modifier</li>
+                    <li>Utilisez les boutons + et - pour gérer les scores</li>
+                    <li>Le bouton "!" permet de gérer les casses</li>
+                    <li>Utilisez le timer pour chronométrer les manches</li>
+                </ul>
+                <h3>Paramètres</h3>
+                <ul>
+                    <li>Points pour gagner</li>
+                    <li>Sons activés/désactivés</li>
+                    <li>Animations activées/désactivées</li>
+                    <li>Durée du timer</li>
+                </ul>
+            </div>
+            <div class="button">
+             <div class="cta-button"><a href="contact.html" target="_blank"
                         rel="noopener noreferrer">Me contacter</a></div>
+                <a href="mailto:bertrandfouquet@gmail.com" target="_blank" rel="noopener noreferrer">Par mail</a>
+            </div>
            
+        </div>
            
         </div>
     `;
