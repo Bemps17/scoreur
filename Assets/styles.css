@@ -17,12 +17,11 @@ body {
     font-family: 'prompt', -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
    
-    background: 
-    linear-gradient(45deg, #1A1A1A, #2A2A2A); 
+    background:linear-gradient(45deg, #1A1A1A, #2A2A2A); 
 
-background-size: cover, cover; /* Taille des arrière-plans */
-background-position: center, center; /* Position des arrière-plans */
-background-repeat: no-repeat, repeat; /* Empêche la répétition */
+background-size:cover; /* Taille des arrière-plans */
+background-position:center; /* Position des arrière-plans */
+background-repeat:no-repeat; /* Empêche la répétition */
 
 
     color: var(--text-color);
