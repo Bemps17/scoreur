@@ -1,0 +1,143 @@
+/* Enhanced UI/UX CSS */
+:root {
+    --primary-color: #08196f;
+    --secondary-color: #007bff;
+ 
+    --text-color: #e0f7fa;
+    --text-color-2: #0f172a;
+    --card-bg: #1e293b;
+    --neon-shadow: 0 0 10px var(--primary-color);
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Boutons et contrôles */
+.button-container{
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    align-items: center;
+ 
+   
+    cursor: pointer;
+
+    margin-bottom: 10vh;
+}
+
+
+
+/* Modale */
+.modal {
+  
+    position: absolute;
+    width: 80%;
+    margin: auto;
+
+    display: none;
+    
+    z-index: 1;
+   
+    
+  
+    top: 4vh;
+    left: 10%;
+  
+}
+
+.modal-content {
+    
+   
+z-index: 2000;
+    background-color: #050505eb;
+    color:var(--text-color-1);
+
+   width: 100%;
+    padding: 10px;
+ 
+  display: flex;
+  flex-direction: column;
+    justify-content: center;
+
+ 
+
+.close {
+    position: absolute;
+        top: 0%;
+        right: 5%;
+    color: #aaa;
+  
+    font-size: 60px;
+    font-weight: normal;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-options {
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.modal-content button{
+    margin: 10px;
+    background: #000;
+   
+    border: none;
+    border-radius: 0;
+}
+/* Bouton CTA */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color:var(--text-color-2);
+    background: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  /* Effet au survol */
+  .cta-button:hover {
+  text-decoration: underline;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Effet d'appui */
+  .cta-button:active {
+   
+  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+.cta-button a{
+    color: var(--text-color-2);
+    text-decoration: none;
+}
+
+
+
+
+
+
+}
+.bymail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    color: var(--text-color-1);
+}

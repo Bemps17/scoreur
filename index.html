@@ -41,13 +41,15 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet">
-        <link rel="stylesheet" href="./Assets/all.css">
-        <link rel="stylesheet" href="./Assets/styles.css">
-        <link rel="stylesheet" href="./Assets/stylev4.css">
-        <link rel="stylesheet" href="./Assets/style3.css">
-        <link rel="stylesheet" href="./Assets/UXNew.css">
-        <link rel="stylesheet" href="./Assets/joueurs.css">
-        <link rel="stylesheet" href="./Assets/timer.css">
+      
+        <link rel="stylesheet" href="./Assets/css/all.css">
+        <link rel="stylesheet" href="./Assets/css/styles.css">
+        <link rel="stylesheet" href="./Assets/css/stylev4.css">
+        <link rel="stylesheet" href="./Assets/css/style3.css">
+        <link rel="stylesheet" href="./Assets/css/UXNew.css">
+        <link rel="stylesheet" href="./Assets/css/joueurs.css">
+        <link rel="stylesheet" href="./Assets/css/timer.css">
+        <link rel="stylesheet" href="./Assets/css/timerButton.css">
 
 
 
@@ -68,7 +70,7 @@
 
                 <div id="scorer" class="tab-pane active">
                     <div class="container">
-                        <div class="top-scorer-container"><button id="addPlayerBtn">+ Ajouter Joueur</button><button
+                        <div class="top-scorer-container"><button id="addPlayerBtn"><span class="PlusPlayers">+</span> Ajouter Joueur</button><button
                                 class="questions">?</button></div>
                         <div id="players"></div>
                     </div>
@@ -79,13 +81,15 @@
                     <div class="container timer-display">
                         <span id="timeLeft">45</span>
                         <div class="timer-controls">
-                            <div class="playPause"><button id="startPauseTimer">▶</button>
+                            <div class="playPause">
+                                <button id="startPauseTimer">▶</button>
                                 <button id="resetTimer">↺</button>
                             </div>
                             <button id="addTime">+⏱</button>
                         </div>
                     </div>
                 </div>
+                
             </div>
             
 
@@ -135,7 +139,14 @@
                             <span class="slider"></span>
                         </label>
                     </div>
-
+                    <div class="setting-group">
+                        <label>Afficher les contrôles du timer :</label>
+                        <label class="switch">
+                            <input type="checkbox" id="showTimerButtons" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
                     <div class="setting-group">
                         <label>Durée (secondes):</label>
                         <input type="number" id="timerDuration" value="45" min="1">
@@ -146,7 +157,7 @@
                         <input type="number" id="timeExtension" value="15" min="1">
                     </div>
                 </div>
-                <button id="saveSettings">Sauvegarder</button>
+        
                 <div class="setting-group logoContainer"><img class="logo" src="./icons/bfbg-orange.svg" alt="logo">
                 </div>
             </div>
@@ -166,14 +177,16 @@
         </footer>
 
 
-        <script src="/Assets/script.js" defer></script>
-        <script src="/Assets/scriptv2.js" defer></script>
-        <script src="/Assets/break.js" defer></script>
-        <script src="/Assets/questions.js" defer></script>
-        <script src="/Assets/timer.js" defer></script>
+        <script src="/Assets/js/script.js" defer></script>
+        <script src="/Assets/js/scriptv2.js" defer></script>
+        <script src="/Assets/js/break.js" defer></script>
+        <script src="/Assets/js/questions.js" defer></script>
+        <script src="/Assets/js/timer.js" defer></script>
         <!-- <script src="/Assets/accueil.js" defer></script> -->
-        <script src="/Assets/general.js" defer></script>
-        <script src="/Assets/save.js" defer></script>
+        <script src="/Assets/js/general.js" defer></script>
+        <script src="/Assets/js/save.js" defer></script>
+        <script src="/Assets/js/timerButton.js" defer></script>
+       
 
     </body>
 
