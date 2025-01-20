@@ -90,7 +90,7 @@ button {
         grid-area: name;
         background: transparent;
         border: none;
-        color: var(--text-color-2);
+        color: var(--text-color-1);
         font-size: 1.5rem;
         padding: 6px;
         height: 50%;
