@@ -9,11 +9,15 @@ const defaultSettings = {
     timerAlertEnabled: true,
     timerDuration: 45,
     timeExtension: 15,
+    preAlertTime: 15, // Temps de préalerte
+    finalCountdownTime: 5, // Décompte final
     winnerAnimationEnabled: true,
     timeLeft: 45, // État du timer
     isPaused: true, // État de pause
     players: [] // État des joueurs
 };
+
+
 
 // Charger les paramètres sauvegardés
 function loadSettings() {
@@ -40,7 +44,19 @@ function restoreTimerState() {
     return {
         timeLeft: settings.timeLeft,
         isPaused: settings.isPaused
+        
     };
+}
+
+// Sauvegarder les paramètres personnalisés du timer
+function saveTimerSettings() {
+    const settings = loadSettings();
+    settings.timerDuration = parseInt(document.getElementById('timerDuration').value, 10);
+    settings.preAlertTime = parseInt(document.getElementById('preAlertTime').value, 10);
+    settings.finalCountdownTime = parseInt(document.getElementById('finalCountdownTime').value, 10);
+    settings.timerAlertEnabled = document.getElementById('timerAlertEnabled').checked;
+    settings.soundEnabled = document.getElementById('soundEnabled').checked;
+    saveSettings(settings);
 }
 
 // Sauvegarder l'état des joueurs
@@ -65,13 +81,15 @@ function applyStyles(settings) {
 // Mise à jour automatique des paramètres globaux
 function autoSaveSettings() {
     const settings = loadSettings();
-    settings.winPoints = parseInt(document.getElementById('winPoints').value) || 7;
+    settings.winPoints = parseInt(document.getElementById('winPoints').value, 10) || 7;
     settings.primaryColor = document.getElementById('primaryColor').value || '#08196f';
     settings.secondaryColor = document.getElementById('secondaryColor').value || '#007bff';
     settings.soundEnabled = document.getElementById('soundEnabled').checked;
     settings.timerAlertEnabled = document.getElementById('timerAlertEnabled').checked;
-    settings.timerDuration = parseInt(document.getElementById('timerDuration').value) || 45;
-    settings.timeExtension = parseInt(document.getElementById('timeExtension').value) || 15;
+    settings.timerDuration = parseInt(document.getElementById('timerDuration').value, 10) || 45;
+    settings.timeExtension = parseInt(document.getElementById('timeExtension').value, 10) || 15;
+    settings.preAlertTime = parseInt(document.getElementById('preAlertTime').value, 10) || 15;
+    settings.finalCountdownTime = parseInt(document.getElementById('finalCountdownTime').value, 10) || 5;
     settings.winnerAnimationEnabled = document.getElementById('winnerAnimationEnabled').checked;
 
     // Synchroniser uniquement les paramètres globaux, pas l'état du timer
@@ -91,12 +109,16 @@ document.getElementById('soundEnabled').addEventListener('change', autoSaveSetti
 document.getElementById('timerAlertEnabled').addEventListener('change', autoSaveSettings);
 document.getElementById('timerDuration').addEventListener('change', () => {
     autoSaveSettings();
-    const newDuration = parseInt(document.getElementById('timerDuration').value) || 45;
+    const newDuration = parseInt(document.getElementById('timerDuration').value, 10) || 45;
     saveTimerState(newDuration, true); // Redémarrer avec la nouvelle durée
 });
 document.getElementById('timeExtension').addEventListener('change', autoSaveSettings);
+document.getElementById('preAlertTime').addEventListener('change', autoSaveSettings);
+document.getElementById('finalCountdownTime').addEventListener('change', autoSaveSettings);
 document.getElementById('winnerAnimationEnabled').addEventListener('change', autoSaveSettings);
 
 // Restauration de l'état du timer au chargement
 const { timeLeft, isPaused } = restoreTimerState();
 saveTimerState(timeLeft || settings.timerDuration, isPaused); // Valeurs par défaut si non défini
+document.getElementById('timerDuration').value = settings.timerDuration;
+

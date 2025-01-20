@@ -1,15 +1,7 @@
 /* Feuille de style fusionnée des trois CSS */
 
 
-:root {
-    --primary-color: #08196f;
-    --secondary-color: #007bff;
 
-    --text-color: #e0f7fa;
-    --card-bg: #1e293b;
-    --neon-shadow: 0 0 10px var(--primary-color);
-    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-}
 
 
 /* Boutons généraux */
@@ -30,7 +22,7 @@
     position: relative;
    
     padding-bottom: 5vh;
-    padding-top: 1vh;
+   
  
    
     background: transparent;
@@ -62,13 +54,14 @@
 
 #winnerOverlay::after {
     content: '';
-    background: url(https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMW10cGNqcGNjaHUwZTE1ZHlhM2N4YWs1N3V4cmN2b21pMjZ5MG02aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fXcEM1voE8tJtai1za/giphy.gif) no-repeat center content-box;
+    background: url(/icons/pinguPlause.gif) no-repeat center content-box;
     background-size: 100%;
     color: var(--primary-color);
     font-size: 5rem;
     display: flex;
     justify-content: center;
     align-items:end;
+    z-index: 9999;
 }
 
 /* Paramètres */
@@ -123,7 +116,7 @@
 
 .player .score-display {
     font-size: 3.3rem;
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 /* Media queries */

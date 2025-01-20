@@ -7,7 +7,15 @@
  overflow: hidden;
  
 }
-
+.timer-controls button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    padding: 12px 12px;
+    height: 95px;
+    width: 95px;
+}
 
 /* Timer repositionné */
 .timer-display {
@@ -44,12 +52,12 @@ height: 100%;
 
 .timer-controls {
     display: flex;
-    flex-wrap: wrap;
+  
     gap: 8px;
-    justify-content: center;
+   
     align-items: center;
-    margin-top: 3px;
-    padding: 3rem;
+ 
+ 
 }
 
 
@@ -91,11 +99,27 @@ height: 100%;
     align-items: center;
     font-size: 4rem;
     padding: 12px 12px;
-    height: fit-content;
+    height: 95px;
+    width: 95px;
 }
 .playPause{
     display: flex;
-    flex-direction: column;
+
 
 }
 }
+.TimeExtension{
+    position: absolute;
+    top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.extensionTime{
+  width: fit-content;
+  height: fit-content;
+  font-size: 4rem;
+   
+    color: var(--text-color-1);
+}
+

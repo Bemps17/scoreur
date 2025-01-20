@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
+<!-- Ajoutez dans le head: -->
+
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Scoreur & Timer</title>
 
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=()">
         <!-- Favicon pour les navigateurs -->
         <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
         <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
@@ -27,7 +33,7 @@
         <link rel="icon" type="image/png" sizes="512x512" href="/icons/android-chrome-512x512.png">
 
 
-     
+
 
         <!-- Fichier de configuration PWA -->
         <link rel="manifest" href="./Assets/site.webmanifest">
@@ -41,8 +47,8 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet">
-      
-        <link rel="stylesheet" href="./Assets/css/all.css">
+
+        <!-- Feuilles de style -->
         <link rel="stylesheet" href="./Assets/css/styles.css">
         <link rel="stylesheet" href="./Assets/css/stylev4.css">
         <link rel="stylesheet" href="./Assets/css/style3.css">
@@ -50,61 +56,115 @@
         <link rel="stylesheet" href="./Assets/css/joueurs.css">
         <link rel="stylesheet" href="./Assets/css/timer.css">
         <link rel="stylesheet" href="./Assets/css/timerButton.css">
-
+<link rel="stylesheet" href="./Assets/css/chrono.css">
+        
 
 
 
     </head>
 
     <body>
+        <header>
+            <div class="settings-button">⚙️</div>
+            <p class="timeleft" id="header-timer-display">00:00</p>
+            <h1 id="titleH1" class="site-title">Scoreur & Timer</h1>
+            <button class="questions">?</button>
 
+        </header>
         <section id="globalContainer">
-            <!-- <div id="accueilContainer">
-                <div class="image-container">
-                    <img class="accueil" src="./icons/acceuilscore.png" alt="acceuilscore">
-                    <button class="accueil-button">Go !</button>
-                </div>
-            </div> -->
+          
 
             <div class="tab-content">
+                
 
+               
                 <div id="scorer" class="tab-pane active">
                     <div class="container">
-                        <div class="top-scorer-container"><button id="addPlayerBtn"><span class="PlusPlayers">+</span> Ajouter Joueur</button><button
-                                class="questions">?</button></div>
+                        <div class="top-scorer-container"><button id="addPlayerBtn"><span class="PlusPlayers">+</span>
+                                Ajouter Joueur</button></div>
                         <div id="players"></div>
                     </div>
                     <div id="modal" class="modal"></div>
                 </div>
 
                 <div id="timer" class="tab-pane">
+                   
                     <div class="container timer-display">
                         <span id="timeLeft">45</span>
+                       
                         <div class="timer-controls">
                             <div class="playPause">
                                 <button id="startPauseTimer">▶</button>
                                 <button id="resetTimer">↺</button>
                             </div>
-                            <button id="addTime">+⏱</button>
+                            
+                           
+                           
                         </div>
+                        <div class="TimeExtension"><button class="extensionTime" id="addTime">+⏱</button></div>
                     </div>
                 </div>
-                
+                <div id="chronoPartie" class="tab-pane">
+                    <div class="container">
+                        <div id="tools-container-tools">
+                            <div id="controls-tools">
+
+                                <div id="timer-tools">
+                                    <h3>Durée de la partie</h3>
+                                    <p id="timer-display-tools">00:00</p>
+
+                                 
+
+                                    <!-- Champ pour saisir le temps en minutes -->
+                                    <label for="timer-input-minutes-tools">Temps en minutes :</label>
+                                    <input type="number" id="timer-input-minutes-tools" placeholder="Minutes" inputmode="numeric"
+                                    enterkeyhint="done">
+                                    <!-- Champ pour saisir le temps en secondes -->
+                                    <label class="second-text" for="timer-input-seconds-tools">Temps en secondes :</label>
+                                    <input class="second-text" type="number" id="timer-input-seconds-tools" placeholder="Secondes" inputmode="numeric" 
+                                        enterkeyhint="done">
+
+                                    <div class="timer-tools-buttons">
+                                        <button class="start-timer-tools" id="startTimerTools">Start</button>
+                                        <button class="stop-duree" id="stopTimerTools">Stop</button>
+                                        <button id="resetTimerTools">Reset</button>
+
+                                       
+                                    </div>
+                                </div>
+                                <!-- <div id="chronometer-tools">
+                                    <h3>Chronomètre</h3>
+                                    <p id="chrono-display-tools">00:00</p>
+                                    <button onclick="startChronometerTools()">Démarrer</button>
+                                    <button onclick="stopChronometerTools()">Arrêter</button>
+                                    <button onclick="resetChronometerTools()">Réinitialiser</button>
+                                </div> -->
+
+                               
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    
             </div>
-            
 
 
-            <div class="settings-button">⚙️</div>
+
+          
             <div class="settings-panel">
                 <h2>Paramètres</h2>
+              
                 <div class="settings-content">
                     <div id="screenButtonDiv">
                         <button class="screenButton">Plein écran : double tap</button>
-            
+
+
                     </div>
                     <div class="setting-group">
                         <label>Points pour gagner:</label>
-                        <input type="number" id="winPoints" value="100" min="1">
+                        <input type="number" id="winPoints" value="100" min="1" inputmode="numeric"
+                        enterkeyhint="done">
 
                     </div>
                     <div class="setting-group">
@@ -133,7 +193,7 @@
                     </div>
 
                     <div class="setting-group">
-                        <label>Son d'alerte timer:</label>
+                        <label>Animation d'alerte timer:</label>
                         <label class="switch">
                             <input type="checkbox" id="timerAlertEnabled" checked>
                             <span class="slider"></span>
@@ -146,25 +206,39 @@
                             <span class="slider"></span>
                         </label>
                     </div>
-                    
+
                     <div class="setting-group">
                         <label>Durée (secondes):</label>
-                        <input type="number" id="timerDuration" value="45" min="1">
+                        <input type="number" id="timerDuration" value="45" min="1" inputmode="numeric"
+                        enterkeyhint="done">
                     </div>
 
                     <div class="setting-group">
                         <label>Extension de temps (secondes):</label>
-                        <input type="number" id="timeExtension" value="15" min="1">
+                        <input type="number" id="timeExtension" value="15" min="1" inputmode="numeric"
+                        enterkeyhint="done">
                     </div>
+                    <div class="setting-group">
+                        <label>Son de préalerte (secondes) :</label>
+                        <input type="number" id="preAlertTime" value="15" min="1" inputmode="numeric"
+                        enterkeyhint="done">
+                    </div>
+                    <div class="setting-group">
+                        <label>Décompte final (secondes) :</label>
+                        <input type="number" id="finalCountdownTime" value="5" min="1" inputmode="numeric"
+                        enterkeyhint="done">
+                    </div>
+                    
                 </div>
-        
+
                 <div class="setting-group logoContainer"><img class="logo" src="./icons/bfbg-orange.svg" alt="logo">
                 </div>
             </div>
 
             <audio id="pointSound" src="sounds/point.mp3"></audio>
             <audio id="farmSound" src="sounds/farm.mp3"></audio>
-            <audio id="timerAlertSound" src="sounds/alert.mp3"></audio>
+            <audio id="timerAlertSound" src="sounds/bellDoor.wav"></audio>
+            <audio id="bipSound" src="sounds/bip.wav"></audio>
 
             <!-- Overlay pour l'animation des particules -->
             <div id="winnerOverlay" class="hidden"></div>
@@ -173,20 +247,22 @@
             <div class="tab-navigation">
                 <button class="tab-button active" data-tab="scorer">Scoreur</button>
                 <button class="tab-button" data-tab="timer">Timer</button>
+                <button class="tab-button" data-tab="chronoPartie">durée</button>
             </div>
         </footer>
 
+        <script src="./Assets/js/script.js" defer></script>
+        <script src="./Assets/js/scriptv2.js" defer></script>
+        <script src="./Assets/js/break.js" defer></script>
+        <script src="./Assets/js/questions.js" defer></script>
+        <script src="./Assets/js/timer.js" defer></script>
+        <!-- <script src="./Assets/accueil.js" defer></script> -->
+        <script src="./Assets/js/general.js" defer></script>
+        <script src="./Assets/js/save.js" defer></script>
+        <script src="./Assets/js/timerButton.js" defer></script>
+        <script src="./Assets/js/chrono.js" defer></script>
+    
 
-        <script src="/Assets/js/script.js" defer></script>
-        <script src="/Assets/js/scriptv2.js" defer></script>
-        <script src="/Assets/js/break.js" defer></script>
-        <script src="/Assets/js/questions.js" defer></script>
-        <script src="/Assets/js/timer.js" defer></script>
-        <!-- <script src="/Assets/accueil.js" defer></script> -->
-        <script src="/Assets/js/general.js" defer></script>
-        <script src="/Assets/js/save.js" defer></script>
-        <script src="/Assets/js/timerButton.js" defer></script>
-       
 
     </body>
 

@@ -9,7 +9,7 @@
     border-radius: 20px;
     padding: 4px 10px;
     margin: 2px 2px;
-    gap: 2px;
+    gap: 1px;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-areas: 
@@ -40,7 +40,7 @@ button {
     grid-area: name;
     background: transparent;
     border: none;
-    color: var(--text-color);
+    color: white;
     font-size: 1.5rem;
     padding: 6px;
     height: 50%;
@@ -79,11 +79,7 @@ button {
     margin: 0;
 }
 
-.farm-count input {
-    font-size: 2rem;
-    font-family: 'Nunito', sans-serif;
-    color: var(--primary-color);
-}
+
 
 
 
@@ -94,7 +90,7 @@ button {
         grid-area: name;
         background: transparent;
         border: none;
-        color: var(--text-color);
+        color: var(--text-color-2);
         font-size: 1.5rem;
         padding: 6px;
         height: 50%;

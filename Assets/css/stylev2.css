@@ -1,31 +1,23 @@
-/* :root {
-    --primary-color: #ff7700;
-    --secondary-color: #ff9944;
-    --background-color: #1c1c1c;
-    --text-color: #f0f0f0;
-    --card-bg: #2c2c2c;
-    --neon-shadow: 0 0 10px var(--primary-color);
-    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-} */
-:root {
-    --primary-color: #08196f;
-    --secondary-color: #007bff;
 
-    --text-color: #e0f7fa;
-    --card-bg: #1e293b;
-    --neon-shadow: 0 0 10px var(--primary-color);
-    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+:root {
+    --primary-color: #FFD700;
+    --background-color: #1A1A1A;
+    --card-bg: #2A2A2A;
+    --text-color: #FFFFFF;
+    --gradient: linear-gradient(45deg, #FFD700, #FFA500);
+    --neon-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700, 0 0 70px #FFD700, 0 0 80px #FFD700, 0 0 100px #FFD700, 0 0 150px #FFD700;
 }
 
 #globalContainer{
     position: relative;
     top: 0vh;
     font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-    margin: 0;
+    margin: auto;
     padding: 10px;
     background: linear-gradient(45deg, #1A1A1A, #2A2A2A);
     color: var(--text-color);
     width: 100%;
+    max-width: 1920px;
     font-size: 10px;
     display: flex;
     flex-direction: column;

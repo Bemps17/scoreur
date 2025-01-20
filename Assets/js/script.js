@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 3000);
         }
     }
-    
+   
     
 
 // Fonction createPlayer mise à jour

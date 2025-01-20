@@ -1,0 +1,188 @@
+:root {
+    /* Colors */
+    --primary-color: #ffffff;
+    --secondary-color: #f6ff00;
+    
+    /* Text Colors */
+    --text-color: #ff8800;
+    --text-color-2: #0f172a;
+    
+    /* Background & Effects */
+    --card-bg: #1e293b;
+    --neon-shadow: 0 0 10px var(--text-color);
+    --gradient: linear-gradient(135deg, 
+                              var(--primary-color), 
+                              var(--secondary-color));
+    
+    /* Espacements responsifs */
+    --spacing-xs: clamp(0.25rem, 0.5vw, 0.5rem);
+    --spacing-sm: clamp(0.5rem, 1vw, 1rem);
+    --spacing-md: clamp(1rem, 2vw, 2rem);
+    --spacing-lg: clamp(1.5rem, 3vw, 3rem);
+    
+    /* Tailles de texte responsives */
+    --text-xs: clamp(0.5rem, 1vw, 0.75rem);
+    --text-sm: clamp(0.875rem, 1.5vw, 1rem);
+    --text-md: clamp(1rem, 2vw, 1.25rem);
+    --text-lg: clamp(1.5rem, 3vw, 2rem);
+    --text-xl: clamp(2rem, 4vw, 2.5rem);
+    --text-xxl: clamp(3rem, 6vw, 4rem);
+    --text-xxxl: clamp(4rem, 8vw, 6rem);
+}
+
+#tools-container-tools {
+    position: relative;
+    justify-self: center;
+    width: 90%;
+    margin-bottom: 20%;
+    height: auto;
+   
+   
+}
+
+#controls-tools {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    background-color: var(--card-bg);
+  
+  
+    position: relative;
+    box-shadow: var(--neon-shadow);
+}
+
+#chronometer-tools h3,
+#timer-tools h3 {
+    font-size: var(--text-lg);
+   margin: 0;
+    color: var(--text-color);
+}
+
+#chrono-display-tools,
+#timer-display-tools {
+    font-size: var(--text-xxxl);
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-align: center;
+    margin: 0;
+  
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+}
+
+#chronometer-tools button,
+#timer-tools button {
+    padding: var(--spacing-sm) var(--spacing-md);
+  width: 50vw;
+  justify-self: center;
+    margin: 10px;
+    min-width: 120px;
+    background: var(--gradient);
+    color: var(--text-color);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: var(--text-lg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#timer-tools {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: center;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0;
+}
+
+#timer-input-seconds-tools{
+    width: 50%;
+    text-align: center;
+    padding: var(--spacing-xs);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    font-size: var(--text-xs);
+
+}
+.second-text {
+    font-size: var(--text-xs);
+    color: var(--text-color);
+}
+#timer-input-minutes-tools {
+    
+    width: 90%;
+    text-align: center;
+    padding: var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    font-size: var(--text-lg);
+    margin-bottom: var(--spacing-md);
+}
+#chronometer-tools,.timer-tools,.timer-tools-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Media Queries */
+@media (max-width: 768px) {
+    #tools-container-tools {
+        width: 100%;
+    }
+    #chronometer-tools,.timer-tools,.timer-tools-buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #chronometer-tools button,
+    #timer-tools button {
+        width: 80vw;
+       
+    }
+}
+
+#header-timer-display.alert {
+    color: red;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+#header-timer-display.paused {
+    animation: blink-blue 1s infinite;
+    color: blue;
+    font-weight: bold;
+}
+
+@keyframes blink-blue {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

@@ -1,9 +1,9 @@
 /* Enhanced UI/UX CSS */
 :root {
-    --primary-color: #08196f;
-    --secondary-color: #007bff;
+    --primary-color: #000000;
+    --secondary-color: #fff200;
  
-    --text-color: #e0f7fa;
+    --text-color: #ff8800;
     --text-color-2: #0f172a;
     --card-bg: #1e293b;
     --neon-shadow: 0 0 10px var(--primary-color);
@@ -140,4 +140,64 @@ z-index: 2000;
     align-items: center;
     margin-top: 10vh;
     color: var(--text-color-1);
+}
+header{
+    height: 8vh;
+    max-width: 1920px;
+    display: flex;
+    justify-content: space-between;
+ align-items: center;
+   
+
+    color: var(--text-color-1);
+    margin: 0 25px;
+  
+}
+.questions{ 
+
+  
+    color: var(--text-color-1);
+   
+}
+.timeleft{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 10px; 
+   
+width: fit-content;
+background: transparent;
+  
+    padding: 0 10px;
+    border: transparent 1px solid;
+    border-radius: 10px;
+    box-shadow: var(--card-bg) 0 0 5px;   
+    color: var(--text-color-1);
+   
+  
+   margin:0 auto 10px auto;
+
+    color: var(--text-color-2);
+    font-size: calc(1rem + 3vh);
+}
+.second-text{
+    display: none;
+}
+.stop-duree{
+    display: none;
+}
+.save{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;    
+    align-items: center;
+}
+h1{
+
+    display: flex;
+   font-size:calc(1rem + 1.5vw);
+    padding: 0 4vw;
+    color: var(--text-color-2);
 }
