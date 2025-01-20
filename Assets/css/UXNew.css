@@ -201,3 +201,6 @@ h1{
     padding: 0 4vw;
     color: var(--text-color-2);
 }
+#installButton{
+    display: none;
+}

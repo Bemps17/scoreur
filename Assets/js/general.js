@@ -114,3 +114,5 @@ function handleSwipe(startX, endX, elapsedTime) {
         panelStartX = null;
         e.stopPropagation();
     });
+
+    
